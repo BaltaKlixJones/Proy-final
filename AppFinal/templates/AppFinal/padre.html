@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		{% load static %}
+
+		{% block titulo %} {% endblock %}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'AppFinal/assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'AppFinal/assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="{% url 'inicio' %}" class="logo"><strong>Inicio</strong> <span>by Balta</span></a>
+						
+						<nav>	
+							{% block botones %}{% endblock %}
+							
+							{% block avatar%}
+							 {% endblock %}
+							</a>
+							
+							
+						</nav>
+						
+					</header>
+					
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="{% url 'autos' %}">Autos</a></li>
+							<li><a href="{% url 'motos' %}">Motos</a></li>
+							<li><a href="{% url 'aviones' %}">Aviones</a></li>
+							<li><a href="{% url 'camiones' %}">Camiones</a></li>
+							
+							
+							
+						</ul>
+						<ul class="actions stacked">
+							
+						
+						</ul>
+					</nav>
+
+					
+
+				<!-- Banner -->
+					<section id="banner" class="major">
+						<div class="inner">
+							<header class="major">
+								{% block mensaje %} {% endblock %}
+								{% block titulodeinicio %} {% endblock %}
+							</header>
+							
+					</section>
+						
+				<!-- Main -->
+				{% block imagenes %} {% endblock %}
+
+						<!-- Two -->
+							{% block descripcion %} {% endblock %}
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<span>
+									<p>
+										<h2>Cualquier duda que tengas por favor contactanos!</h2>
+										<ul>
+											<h3>Creador:</h3>
+											<li>
+												<a href="{% url 'generic' %}"> Baltasar Klix Jones</a>
+											</li>
+										</ul>
+									</p>
+								</span>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										balta@hotmail.com
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Numero de Telefono</h3>
+										<span>
+											011-555-443-9843-6654
+										</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Dirección</h3>
+										<span>Córdoba, Argentina</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="{% url 'not-found' %}" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="{% static 'AppFinal/assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'AppFinal/assets/js/jquery.scrolly.min.js' %}"></script>
+		<script src="{% static 'AppFinal/assets/js/jquery.scrollex.min.js' %}"></script>
+		<script src="{% static 'AppFinal/assets/js/browser.min.js' %}"></script>
+		<script src="{% static 'AppFinal/assets/js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'AppFinal/assets/js/util.js' %}"></script>
+		<script src="{% static 'AppFinal/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

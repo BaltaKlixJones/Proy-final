@@ -1,0 +1,102 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+
+{% block titulo %}
+
+<title>Inicio</title>
+
+{% endblock %}
+
+{% block mensaje %}
+
+<h3>{{ mensaje }}</h3>
+
+{% endblock %}
+
+{% block titulodeinicio %} 
+<h1>Pagina inicial</h1>
+<div class="content">
+    <p>Esta es una pagina que se trata acerca de vehiculos.<br />
+    Creada para el proyecto final de CODERHOUSE</p>
+    <ul class="actions">
+        <li><a href="#one" class="button next scrolly">Empieza Ahora!</a></li>
+    </ul>
+</div>
+</div>
+{% endblock %}
+
+
+{% block botones %}
+<a href="{% url 'blog' %}" class="btn btn-outline-dark">Blog</a>
+<a href="#menu" class="btn btn-outline-dark">Buscar vehiculo</a>
+<a href="{% url 'inbox' %}">Mensajes</a>
+<a href="{% url 'editarPerfil' %}">
+								
+    <span>
+        <img src="{{ imagen }}" alt="" style="height: 50px; width: 50px; margin: 7px auto; border-radius: 50%;">
+        
+    </span>
+{% endblock %}
+
+
+
+{% block imagenes %}
+<div id="main">
+
+    <!-- One -->
+        <section id="one" class="tiles">
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/ferrari.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'autos' %}" class="link">Autos</a></h3>
+                    <p>Los mejores autos deportivos </p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/moto.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'motos' %}" class="link">Motos</a></h3>
+                    <p>Motos de carreras y de paseos</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/avion.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'aviones' %}" class="link">Aviones</a></h3>
+                    <p>Existen diferentes tipos de aviones...</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="/static/AppFinal/assets/images/camion.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'camiones' %}" class="link">Camiones</a></h3>
+                    <p>Largas distancias y cargas pesadas</p>
+                </header>
+            </article>
+            
+        </section>
+{% endblock %}
+
+{% block descripcion %}
+<section id="two">
+    <div class="inner">
+        <header class="major">
+            <h2>Vehiculos</h2>
+        </header>
+        <p>El vehículo (del Latín: vehiculum) es un medio de locomoción que permite el traslado de un lugar a otro de personas o cosas.Cuando se traslada animales u objetos es llamado vehículo de transporte, como por ejemplo (en orden de creación) el barco, el carro, el tren, la bicicleta, la motocicleta, el automóvil, el camión, el avión y la nave, entre otros.</p>
+        <ul class="actions">
+            
+        </ul>
+    </div>
+</section>
+
+</div>
+{% endblock %}

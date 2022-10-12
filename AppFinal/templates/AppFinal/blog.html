@@ -1,0 +1,89 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+
+{% block titulo %}
+
+<title>Blog</title>
+
+{% endblock %}
+
+{% block mensaje %}
+
+<h3>{{ mensaje }}</h3>
+
+{% endblock %}
+
+{% block titulodeinicio %}
+
+<h1>Blog de fotos</h1>
+
+{% endblock %}
+
+
+
+
+{% block botones %}
+
+<a href="#menu" class="btn btn-outline-dark">Buscar vehiculo</a>
+<a href="{% url 'inbox' %}">Mensajes</a>
+{% endblock %}
+
+
+
+{% block imagenes %} 
+<div id="main" >
+
+    <!-- One -->
+        <section style="position:static; width:90%; margin: 0px auto;">
+            <article>
+                <span class="image">
+                    <h1>Carrera de NASCAR</h1>
+                    <img src="/static/AppFinal/assets/images/carreras.autos.jpg" alt="" style="width: 400px;" />
+                    <p>
+                        <h4>La National Association for Stock Car Auto Racing</h4>
+                        <h5>Es la categoría automovilística más comercial y popular de los Estados Unidos, y la competición de stock cars más importante del mundo. Es miembro del Automobile Competition Committee for the United States </h5>
+                        <h6>12/10/2022</h6>
+                    </p>
+                
+                </span>
+                
+                
+            </article>
+            <hr>
+            <article>
+                <span class="image">
+                    <h1>Motos de carrera</h1>
+                    <img src="/static/AppFinal/assets/images/carreras.motos.jpg" alt="" style="width: 400px;"/>
+                    <h4>Moto GP</h4>
+                    <h5>Las carreras de motos son el deporte de las motocicletas de carreras. Las principales variedades incluyen carreras de motos en carretera y fuera de carretera, tanto en circuitos como en circuitos abiertos, y carreras de pista.</h5>
+                    <h6>12/10/2022</h6>
+                </span>
+                
+            </article>
+            <hr>
+            <article>
+                <span class="image">
+                    <h1>Aeromodelismo</h1>
+                    <img src="/static/AppFinal/assets/images/carreras.aviones.jpg" alt="" style="width: 400px;"/>
+                    <h4>Vuelo libre</h4>
+                    <h5>Es una afición y un deporte derivado de la técnica de construcción y vuelo de aeroplanos de pequeño, mediano y gran tamaño, denominados aeromodelos, que han sido preparados para volar sin tripulación.</h5>
+                    <h6>11/10/2022</h6>
+                </span>
+                
+            </article>
+            <hr>
+            <article>
+                <span class="image">
+                    <h1>Carrera de camiones</h1>
+                    <img src="/static/AppFinal/assets/images/carreras.camiones.jpg" alt="" style="width: 400px;"/ >
+                    <h4>GP Camiones</h4>
+                    <h5>Son una modalidad de automovilismo en el que se compite con cabezas tractoras de camiones en circuitos. La velocidad máxima que se puede alcanzar por motivos de seguridad es la de 160 km/h, y los camiones deben pesar al menos 5500 kg</h5>
+                    <h6>12/10/2022</h6>
+                </span>
+                
+            </article>
+            
+        </section>
+
+        
+{% endblock %}

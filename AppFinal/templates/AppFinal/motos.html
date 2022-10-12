@@ -1,0 +1,164 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Motocicletas</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Motocicletas</h1>
+{% endblock %}
+
+{% block subtitulo %}
+<p>Una motocicleta, es un vehículo de dos ruedas, impulsado por un motor de combustión interna a gasolina que acciona la rueda trasera.  </p>
+{% endblock %}
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/fondoMoto.jpg" alt="" />
+{% endblock %}
+
+{% block cargar %} 
+<h3>{{ mensaje }}</h3>
+
+<h2>Un poco de historia ...</h2>
+
+
+{% endblock %}
+
+{% block historia %}
+
+{% endblock %}
+
+{% block info1 %}
+<a  class="image">
+    <img src="/static/AppFinal/assets/images/primeraMoto.jpg" alt="" data-position="center center" />
+</a>
+<div class="content">
+    <div class="inner">
+        <header class="major">
+            <h3>La primera moto</h3>
+        </header>
+        <p>No fue sino hasta 1867 que el estadounidense, Sylvester Howard Roper, inventó un motor de cilindros a vapor (accionado por carbón) y lo integró a una bicicleta. A esta se le consideró realmente como la primera motocicleta.</p>
+        <ul class="actions">
+            <li><a href="https://www.spaciobiker.com/es/blog//la-primera-moto-de-la-historia#:~:text=Entre%20ellos%2C%20el%20norteamericano%20Sylvester,uno%20de%20los%20autom%C3%B3viles%20primigenios." class="button" target="_blank">Ver más</a></li>
+        </ul>
+    </div>
+</div>
+</section>
+<section>
+    <a  class="image">
+        <img src="/static/AppFinal/assets/images/motocreador.jpg" alt="" data-position="top center" />
+    </a>
+    <div class="content">
+        <div class="inner">
+            <header class="major">
+                <h3>Creador</h3>
+            </header>
+            <p>Edward Joel Pennington fue un inventor y promotor de muchos dispositivos mecánicos, incluidos dirigibles, motocicletas y automóviles. Sus múltiples propuestas casi nunca llegaron a materializarse en realizaciones prácticas.</p>
+            <ul class="actions">
+                <li><a href="https://es.wikipedia.org/wiki/E._J._Pennington" class="button" target="_blank">Ver más</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block nuestrosvehiculos %} 
+
+<header class="major">
+    <h2>Tus motos:</h2>
+    <h5>
+        <a href="{% url 'leermotos' %}" >Editar lista de motos |</a> 
+        <a href="#cargar" class="next scrolly">Cargar moto |</a> 
+        <a href="#cargar" class="next scrolly">Buscar moto</a> 
+       
+    </h5>
+</header>
+
+
+<div class="container mt-5">
+    <table class="table table-dark table-hover">
+        <thead>
+            <th>
+                Marca
+            </th>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                Año
+            </th>
+        </thead>
+</div>
+    {% if ver_motos %}
+
+ {% for moto in ver_motos %}
+ <tbody>
+    <tr>
+        <td>{{ moto.marca }} </td>
+        <td>{{ moto.modelo }} </td>
+        <td>{{ moto.color }} </td>
+        <td>{{ moto.año }}  </td>
+    </tr>
+</tbody>
+    {% endfor %}
+</table>
+
+{% else %}
+
+<table>
+    <h4>No hay registros</h4>
+</table>
+
+{% endif %}
+
+{% endblock %}
+
+{% block crear %}
+<div id="cargar"></div>
+    <div class="major">
+    <h3>Agrega tu moto preferida:</h3>
+    </div>
+    <div style="width: 500px ;">
+        <form action="" method="POST"> {% csrf_token %}
+            <table>
+
+                {{ formulario.as_table }}
+
+            </table>
+
+            <ul class="actions">
+                <button type="submit" class=""> Guardar </button>
+                
+                <li><input type="reset" value="Borrar" /></li>
+            </ul>
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block buscarpormarca %}
+
+<h4><span class="fa fa-search"></span> Buscar por marca</h4>
+<div style="width: 500px ;">
+    <form action="{% url 'buscarmotos' %}" method="GET"> {% csrf_token %}
+
+        <p>Marca: <input type="text" name="marca", id="marca"></p>
+        <ul class="actions">
+            <input type="submit", value="Buscar">
+            
+            <li><input type="reset" value="Borrar" /></li>
+        </ul>
+        
+    </form>
+</div>
+
+
+{% endblock %}
+

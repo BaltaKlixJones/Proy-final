@@ -1,0 +1,53 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Editar foto</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Cambiar foto de perfil</h1>
+<h2>{{ mensaje }}</h2>
+{% endblock %}
+
+{% block subtitulo %}
+{% endblock %}
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/editarfondo.jpg" alt="" />
+{% endblock %}
+
+{% block cargar %} 
+{% endblock %}
+
+{% block historia %}
+
+<h1>Cambiar foto de perfil</h1>
+
+<form action="{% url 'agregarAvatar' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        
+    {{ form.as_p }}
+    <button type="submit" class="button"> Guardar </button>
+    
+</form>
+   <a href="{% url 'editarPerfil' %}"> 
+        <h3>Volver </h3>
+    </a> 
+{% endblock %}
+
+
+{% block info1 %}
+{% endblock %}
+
+
+{% block nuestrosvehiculos %} 
+{% endblock %}
+
+{% block crear %}
+{% endblock %}
+
+
+
+

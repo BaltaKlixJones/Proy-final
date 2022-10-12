@@ -1,0 +1,55 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Resultado de la busqueda</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Autos</h1>
+{% endblock %}
+
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/vwinicio.jpg" alt="" />
+{% endblock %}
+
+{% block cargar %} 
+
+
+<h2>Resultados:</h2>
+{% endblock %}
+
+{% block historia %}
+
+{% if mensaje %}
+<h4">{{ mensaje }}</h4>
+
+{% else %}
+
+
+{% for a in autos %}
+<h4> 
+    <ul>
+        <li> {{ a.marca }} - Modelo: {{ a.modelo }} - Color: {{ a.color }} - Año {{ a.año }} </li> 
+        <hr>
+    </ul>
+</h4>
+
+{% endfor %}
+
+{% endif %}
+{% endblock %}
+
+{% block crear %}
+<div style="display:ruby-base-container ">
+    <a href="{% url 'autos' %}" class="button back"> Volver </a>
+    <a href="{% url 'leerautos' %}" class="button back"> Editar </a>
+</div>
+
+{% endblock %}
+
+
+

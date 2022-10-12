@@ -1,0 +1,53 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Editar aviones</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Editar Aviones</h1>
+{% endblock %}
+
+{% block subtitulo %}
+<h1>{{ mensaje }}</h1>
+{% endblock %}
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/editarfondo.jpg" alt="" />
+{% endblock %}
+
+{% block cargar %} 
+<h2>Aviones cargados: </h2>
+{% endblock %}
+
+{% block historia %}
+
+
+{% for a in leeraviones %}
+<h4> 
+    <ul>
+        <li>  {{ a.modelo }} - {{ a.color }} - Año {{ a.año }} </li> 
+            <a href="{% url 'eliminarAvion' a.id %}" class="btn btn-outline-danger" > Eliminar | </a> 
+            <a href="{% url 'editarAvion' a.id %}" class="btn btn-outline-danger" > Editar</a>
+            <hr>
+    </ul>
+</h4>
+
+
+{% endfor %}
+
+
+{% endblock %}
+
+{% block crear %}
+
+<a href="{% url 'aviones' %}" class="button back"> Volver </a>
+
+
+{% endblock %}
+
+
+

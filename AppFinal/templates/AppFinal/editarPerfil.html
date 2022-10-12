@@ -1,0 +1,75 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Perfil {{ usuario }}</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+{{ mensaje }}
+<h1>Usuario {{ usuario }}</h1> 
+
+{% endblock %}
+
+{% block subtitulo %}
+{% endblock %}
+
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/editarfondo.jpg" alt="" />
+{% endblock %}
+
+
+{% block cargar %} 
+{% endblock %}
+
+{% block historia %}
+<a href="{% url 'logout' %}" class="button">Cerrar sesion</a>
+<hr>
+<h1>Foto de perfil:</h1> 
+<div class="avatarperfil">
+    <img src="{{ imagen }}" alt="" style="height: 210px; ">
+    <a href="{% url 'agregarAvatar' %}">
+        <p> Editar foto de perfil </p>
+    </a>
+    <hr>
+</div>
+
+<div style="width: 500px;
+padding: 30px;
+margin: auto;
+margin-top: 10px;"">
+<br>
+<br>
+<br>
+<h1>Editar datos</h1>
+<h3>{{ mensaje }}</h3>
+<div style="width: 600px ;">
+    <form action="{% url 'editarPerfil' %}" method="POST"> {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+        <button type="submit" class="button"> Guardar cambios </button>
+
+    </div>
+        <a href="{% url 'inicio' %}" class="button back">Volver</a>
+
+    </form>
+</div>
+{% endblock %}
+
+{% block info1 %}
+{% endblock %}
+
+
+{% block nuestrosvehiculos %} 
+{% endblock %}
+
+{% block crear %}
+{% endblock %}
+
+
+
+

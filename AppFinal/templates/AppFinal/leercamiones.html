@@ -1,0 +1,53 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Editar camiones</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Editar Camiones</h1>
+{% endblock %}
+
+{% block subtitulo %}
+<h1>{{ mensaje }}</h1>
+{% endblock %}
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/editarfondo.jpg" alt="" />
+{% endblock %}
+
+{% block cargar %} 
+<h2>Tus Camiones: </h2>
+{% endblock %}
+
+{% block historia %}
+
+
+{% for c in leercamiones %}
+<h4> 
+    <ul>
+        <li> {{ c.marca }} - {{ c.modelo }} - {{ c.color }} - Año {{ c.año }} </li> 
+            <a href="{% url 'eliminarCamion' c.id %}" class="btn btn-outline-danger" > Eliminar | </a> 
+            <a href="{% url 'editarCamion' c.id %}" class="btn btn-outline-danger" > Editar</a>
+            <hr>
+    </ul>
+</h4>
+
+
+{% endfor %}
+
+
+{% endblock %}
+
+{% block crear %}
+
+<a href="{% url 'camiones' %}" class="button back"> Volver </a>
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,48 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Motocicletas</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Editar moto</h1>
+{% endblock %}
+
+{% block subtitulo %}
+
+{% endblock %}
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/editarfondo.jpg" alt="" />
+{% endblock %}
+
+{% block cargar %} 
+
+{% endblock %}
+
+
+
+{% block crear %}
+<div class="major">
+<h3>Editando {{ moto_marca }}:</h3>
+</div>
+<div style="width: 500px ;">
+    <form action="{% url 'editarMoto' id %}" method="POST"> {% csrf_token %}
+        <table>
+
+            {{ formulario.as_table }}
+
+        </table>
+
+        <input type="submit", value="Guardar"> 
+    </form>
+</div>
+
+<a href="{% url 'leermotos' %}" class="button back"> Volver </a>
+{% endblock %}
+
+
+

@@ -1,0 +1,175 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Aviones</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Aviones</h1>
+{% endblock %}
+
+{% block subtitulo %}
+<p>Un avión, es un aeronave con mayor densidad que el aire, dotado de alas y un espacio de carga, y capaz de volar impulsado por uno o más motores. </p>
+{% endblock %}
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/avion.pagina2.jpg" alt="" />
+{% endblock %}
+
+{% block cargar %} 
+<h3>{{ mensaje }}</h3>
+
+<h2>Un poco de historia ...</h2>
+
+
+{% endblock %}
+
+{% block navegacion %}
+
+{% endblock  %}
+
+{% block historia %}
+
+{% endblock %}
+
+{% block info1 %}
+<a  class="image">
+    <img src="/static/AppFinal/assets/images/primerAvion.jpg" alt="" data-position="center center" />
+</a>
+<div class="content">
+    <div class="inner">
+        <header class="major">
+            <h3>El primer avion</h3>
+        </header>
+        <p>El primer vuelo de una aeronave es la primera ocasión que despega de tierra por sus propios medios. Es similar al primer viaje de buques. El primer vuelo de un nuevo modelo de aeronave es siempre una ocasión histórica para la aeronave.</p>
+        <ul class="actions">
+            <li><a href="https://es.wikipedia.org/wiki/Primer_vuelo" class="button" target="_blank">Ver más</a></li>
+        </ul>
+    </div>
+</div>
+</section>
+<section>
+    <a  class="image">
+        <img src="/static/AppFinal/assets/images/creador.avion.jpg" alt="" data-position="top center" />
+    </a>
+    <div class="content">
+        <div class="inner">
+            <header class="major">
+                <h3>Creadores</h3>
+            </header>
+            <p>Los hermanos Wright, Wilbur y Orville, fueron dos aviadores, ingenieros, inventores y pioneros de la aviación, generalmente nombrados en conjunto, y reconocidos mundialmente como los que inventaron, construyeron y volaron el primer aeroplano del mundo de manera exitosa, aun cuando existe una cierta controversia sobre ello.</p>
+            <ul class="actions">
+                <li><a href="https://es.wikipedia.org/wiki/Hermanos_Wright" class="button" target="_blank">Ver más</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block blog  %} 
+
+{% endblock %}
+
+
+{% block nuestrosvehiculos %} 
+
+<header class="major">
+    <h2>Aviones creados:</h2>
+    <h5>
+        <a href="{% url 'leeraviones' %}" >Editar lista de aviones |</a> 
+        <a href="#cargar" class="next scrolly">Cargar avion |</a> 
+        <a href="#cargar" class="next scrolly">Buscar avion</a> 
+       
+    </h5>
+</header>
+
+
+<div class="container mt-5">
+    <table class="table table-dark table-hover">
+        <thead>
+            
+            <th>
+                Modelo
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                Año
+            </th>
+        </thead>
+</div>
+    {% if ver_aviones %}
+
+ {% for avion in ver_aviones %}
+ <tbody>
+    <tr>
+        
+        <td>{{ avion.modelo }} </td>
+        <td>{{ avion.color }} </td>
+        <td>{{ avion.año }}  </td>
+    </tr>
+</tbody>
+    {% endfor %}
+</table>
+
+{% else %}
+
+<table>
+    <h4>No hay registros</h4>
+</table>
+
+{% endif %}
+
+{% endblock %}
+
+
+
+{% block crear %}
+<div id="cargar"></div>
+    <div class="major">
+    <h3>Agrega tu avion preferido:</h3>
+    </div>
+    <div style="width: 500px ;">
+        <form action="" method="POST"> {% csrf_token %}
+            <table>
+
+                {{ formulario.as_table }}
+
+            </table>
+
+            
+            
+            <ul class="actions">
+                <button type="submit" class=""> Guardar </button>
+                
+                <li><input type="reset" value="Borrar" /></li>
+            </ul>
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block buscarpormarca %}
+
+<h4><span class="fa fa-search"></span> Buscar por color</h4>
+<div style="width: 500px ;">
+    <form action="{% url 'buscaraviones' %}" method="GET"> {% csrf_token %}
+
+        <p>Color: <input type="text" name="color", id="color"></p>
+        <ul class="actions">
+            <input type="submit", value="Buscar">
+            
+            <li><input type="reset" value="Borrar" /></li>
+        </ul>
+        
+    </form>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,53 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Editar motos</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Editar Motos</h1>
+{% endblock %}
+
+{% block subtitulo %}
+<h1>{{ mensaje }}</h1>
+{% endblock %}
+
+{% block imagentitulo %}
+<img src="/static/AppFinal/assets/images/editarfondo.jpg" alt="" />
+{% endblock %}
+
+{% block cargar %} 
+<h2>Tus Motos: </h2>
+{% endblock %}
+
+{% block historia %}
+
+
+{% for m in leermotos %}
+<h4> 
+    <ul>
+        <li> {{ m.marca }} - {{ m.modelo }} - {{ m.color }} - Año {{ m.año }} </li> 
+            <a href="{% url 'eliminarMoto' m.id %}" class="btn btn-outline-danger" > Eliminar | </a> 
+            <a href="{% url 'editarMoto' m.id %}" class="btn btn-outline-danger" > Editar</a>
+            <hr>
+    </ul>
+</h4>
+
+
+{% endfor %}
+
+
+{% endblock %}
+
+{% block crear %}
+
+<a href="{% url 'motos' %}" class="button back"> Volver </a>
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,63 @@
+{% extends "AppFinal/landing.html" %}
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Registrarse</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Registate Ahora! </h1>
+{% endblock %}
+
+{% block subtitulo %}
+{% endblock %}
+
+{% block imagentitulo %}
+{% endblock %}
+
+{% block cargar %} 
+{% endblock %}
+
+{% block historia %}
+<div style="width: 500px;
+	padding: 30px;
+	margin: auto;
+	margin-top: 10px;
+    background: rgba(1, 8, 89, 0.238);">
+    <h1 style="margin: auto;">
+        Registarse
+    </h1>
+    <h3>{{ mensaje }}</h3>
+
+<div style="width: 450px ;">
+    <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+        
+
+        {{ form.as_p }}
+        <button type="submit" class="button"  style="width: 100%;"> Registarse </button>
+        <div style="padding: 10px; text-align: center;">
+        <a href="{% url 'login' %}">
+        <p>¿Ya tienes cuenta? Inicia sesión</p>
+        </a>
+         </div>
+
+    </form>
+        </div>
+</div>
+{% endblock %}
+
+{% block info1 %}
+{% endblock %}
+
+
+{% block nuestrosvehiculos %} 
+{% endblock %}
+
+{% block crear %}
+{% endblock %}
+
+
+
+

@@ -1,0 +1,86 @@
+{% extends "AppFinal/landing.html" %} 
+{% load static %}
+
+{% block titulopagina %} 
+
+<title>Login</title>
+
+{% endblock %}
+
+{% block tituloinicio %} 
+<h1>Necesitas iniciar sesión para entrar a la página </h1>
+{{ mensaje }}
+{% endblock %}
+
+
+{% block navegacion %}
+<a href="{% url 'register' %}" class="logo">Registarse</a>
+{% endblock %}
+
+{% block historia %}
+
+<section >
+    <div style="width: 500px;
+	padding: 30px;
+	margin: auto;
+	margin-top: 10px;
+    background: rgba(1, 8, 89, 0.238);">
+    <h1 style="margin: auto;">
+        Login
+    </h1>
+    <h3>{{ mensaje }}</h3>
+        <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+            
+
+            {{ form.as_p }}
+            <button type="submit" class="button-login" style="width: 100%;"> Iniciar Sesión </button>
+        </form>
+    
+</section>
+</div>
+{% endblock %}
+
+{% block imagenesinicio %}
+<div id="main">
+
+    <!-- One -->
+        <section id="one" class="tiles">
+            <article>
+                <span class="image">
+                    <img src="static/AppFinal/assets/images/ferrari.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'autos' %}" class="link">Autos</a></h3>
+                    <p>Los mejores autos deportivos </p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="static/AppFinal/assets/images/moto.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'motos' %}" class="link">Motos</a></h3>
+                    <p>Motos de carreras y de paseos</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="static/AppFinal/assets/images/avion.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'aviones' %}" class="link">Aviones</a></h3>
+                    <p>Existen diferentes tipos de aviones...</p>
+                </header>
+            </article>
+            <article>
+                <span class="image">
+                    <img src="static/AppFinal/assets/images/camion.inicio.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h3><a href="{% url 'camiones' %}" class="link">Camiones</a></h3>
+                    <p>Largas distancias y cargas pesadas</p>
+                </header>
+            </article>
+            
+        </section>
+{% endblock %}
